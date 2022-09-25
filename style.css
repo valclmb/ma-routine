@@ -13,6 +13,7 @@ html {
   }
   .routine-container {
     display: none;
+    justify-content: space-around;
     flex: 1;
   }
   h1 {
@@ -30,106 +31,96 @@ html {
     padding: 2rem;
     border-radius: 50%;
   }
-  .outer-clock-face {
+
+
+  .routine-cc {
     position: relative;
-    background: #282828;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: #282828;
+    border: 1px solid white;
   }
-  
-  .outer-clock-face::after {
+
+
+  .routine {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+
+  .routine-cc .marking, .routine-cc::after, .routine-cc::before {
+    position: absolute;
+      content: '';
+      width: 3px;
+      height: 100%;
+      background: white;
+      z-index: 0;
+      left: 49%;
+      top: 0;
+  }
+
+  .routine-cc::after {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
-    transform: rotate(90deg)
+    transform: rotate(90deg) translateY(-3px);
+  }
+  h1{
+    color: rgb(156, 156, 156);
   }
   
-  .outer-clock-face::after,
-  .outer-clock-face::before,
-  .outer-clock-face .marking{
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background: #5a52ce;
-    z-index: 0;
-    left: 49%;
-  }
-
-  
-  .outer-clock-face .marking-tierce {
-    background: #bdbdcb;
-    width: 4px;
-  }
-  .outer-clock-face .marking.marking-tierce {
-    background: rgb(27, 137, 80);
-  }
-  .outer-clock-face .marking.marking-tierce.one {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    transform: rotate(45deg)
-  }
-  .outer-clock-face .marking.marking-tierce.two {
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    transform: rotate(135deg)
-  }
-
-  .outer-clock-face .marking-detail {
-    background: rgb(65, 65, 65);
+  .routine-cc .marking.marking-tierce, .routine-cc .marking.marking-detail{
     width: 2px;
   }
-    .outer-clock-face .marking.marking-detail.one {
-    -webkit-transform: rotate(15deg);
-    -moz-transform: rotate(15deg);
-    transform: rotate(15deg)
+   .routine-cc .marking.marking-detail{
+    width: 1px;
+  }
+  .routine-cc .marking.marking-tierce.one {
+    transform: rotate(45deg) translateY(-3px);
+  }
+  .routine-cc .marking.marking-tierce.two {
+    transform: rotate(135deg) translateY(-3px);
+  }
 
-    }
-    .outer-clock-face .marking.marking-detail.two {
-        -webkit-transform: rotate(30deg);
-        -moz-transform: rotate(30deg);
-        transform: rotate(30deg)
-    }
-    .outer-clock-face .marking.marking-detail.three {
-        -webkit-transform: rotate(60deg);
-        -moz-transform: rotate(60deg);
-        transform: rotate(60deg)
-    }
-    .outer-clock-face .marking.marking-detail.four {
-        -webkit-transform: rotate(75deg);
-        -moz-transform: rotate(75deg);
-        transform: rotate(75deg)
-    }
-    .outer-clock-face .marking.marking-detail.five {
-        -webkit-transform: rotate(105deg);
-        -moz-transform: rotate(105deg);
-        transform: rotate(105deg)
-    }
-    .outer-clock-face .marking.marking-detail.six {
-        -webkit-transform: rotate(120deg);
-        -moz-transform: rotate(120deg);
-        transform: rotate(120deg)
-    }
-    .outer-clock-face .marking.marking-detail.seven {
-        -webkit-transform: rotate(150deg);
-        -moz-transform: rotate(150deg);
-        transform: rotate(150deg)
-    }
-    .outer-clock-face .marking.marking-detail.eight {
-        -webkit-transform: rotate(165deg);
-        -moz-transform: rotate(165deg);
-        transform: rotate(165deg)
-    }
-    
+  .routine-cc .marking.marking-detail.one {
+    transform: rotate(15deg) translateY(-1px);
+  }
+  .routine-cc .marking.marking-detail.two {
+    transform: rotate(30deg) translateY(-2px);
+  }
+  .routine-cc .marking.marking-detail.three {
+    transform: rotate(60deg) translateY(-3px);
+  }
+  .routine-cc .marking.marking-detail.four {
+    transform: rotate(75deg) translateY(-4px);
+  }
+  .routine-cc .marking.marking-detail.five {
+    transform: rotate(105deg) translateY(-4px);
+  }
+  .routine-cc .marking.marking-detail.six {
+    transform: rotate(120deg) translateY(-3px);
+  }
+  .routine-cc .marking.marking-detail.seven {
+    transform: rotate(150deg) translateY(-2px);
+  }
+  .routine-cc .marking.marking-detail.seven {
+    transform: rotate(165deg) translateY(-1px);
+  }
+  .routine-cc .marking.marking-detail.eight {
+    transform: rotate(150deg) translateY(-2px);
+  }
+  
+
 
 
   .inner-clock-face {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    width: 80%;
-    height: 80%;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
     background: #282828;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -170,26 +161,18 @@ html {
     position: absolute;
     color: white;
     left: 50%;
-    top:38%;
+    top:35%;
     font-size: 17px;
     z-index: 55;
     transform: translateX(-50%);
-
+    background: rgba(0, 0, 0, 0.454);
+    padding: 5px;
+    border-radius: 4px;
   }
 
 
   /*  routine  */
-  
-  .routine {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
+ 
   .routine-part {
     position: absolute;
     left: 50%;

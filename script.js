@@ -22,15 +22,15 @@ setDate();
 // initialize routine
 
 const routine = [
-  { startTime: 22, endTime: 7, color: "cyan", sleep: true },
-  { startTime: 7, endTime: 7.5, color: "yellow" },
-  { startTime: 7.5, endTime: 13, color: "green" },
-  { startTime: 13, endTime: 13.5, color: "yellow" },
-  { startTime: 13.5, endTime: 14, color: "orange" },
-  { startTime: 14, endTime: 17, color: "blue" },
-  { startTime: 17, endTime: 18, color: "red" },
-  { startTime: 18, endTime: 21, color: "blue" },
-  { startTime: 21, endTime: 22, color: "green" },
+  { startTime: 22, endTime: 7, color: "#40487E", sleep: true },
+  { startTime: 7, endTime: 7.5, color: "#D1584F" },
+  { startTime: 7.5, endTime: 13, color: "#FBCB85" },
+  { startTime: 13, endTime: 13.5, color: "#D1584F" },
+  { startTime: 13.5, endTime: 14, color: "#F7B6CC" },
+  { startTime: 14, endTime: 17, color: "#81C784" },
+  { startTime: 17, endTime: 18, color: "#EFE05C" },
+  { startTime: 18, endTime: 21, color: "#6AB26D" },
+  { startTime: 21, endTime: 22, color: "#FBCB85" },
 ];
 window.localStorage.setItem("routine", JSON.stringify(routine));
 
@@ -56,7 +56,7 @@ routine.forEach(({ startTime, endTime, color, sleep }) => {
   startDiv.classList.add("routine-part");
   startDiv.style.setProperty("--rotation", getTimeAngle(startTime));
   startDiv.style.backgroundColor = color;
-  if (sleep) startDiv.style.zIndex = 6;
+  if (sleep) startDiv.style.zIndex = 7;
   routineContainer.append(startDiv);
   if (needManyDiv(endTime, startTime)) {
     const longDiv = document.createElement("div");
@@ -65,6 +65,13 @@ routine.forEach(({ startTime, endTime, color, sleep }) => {
     longDiv.style.backgroundColor = color;
     routineContainer.append(longDiv);
   }
+  // end
+  const endDiv = document.createElement("div");
+  endDiv.classList.add("routine-part");
+  endDiv.style.setProperty("--rotation", getTimeAngle(endTime));
+  endDiv.style.backgroundColor = "#282828";
+  endDiv.style.zIndex = 5;
+  routineContainer.append(endDiv);
 });
 
 const h1 = document.querySelector("h1");
