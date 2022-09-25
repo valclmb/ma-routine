@@ -1,0 +1,220 @@
+html {
+    background: #282828;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Mono', monospace;
+    color: white;
+  }
+  body {
+    margin: 0;
+    font-size: 2rem;
+    min-height: 100vh;
+    align-items: center;
+  }
+  .routine-container {
+    display: none;
+    flex: 1;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: normal;
+    color: white;
+    margin: 35px;
+   
+  }
+  .clock {
+    position: relative;
+    z-index: 10;
+    width: 30rem;
+    height: 30rem;
+    padding: 2rem;
+    border-radius: 50%;
+  }
+  .outer-clock-face {
+    position: relative;
+    background: #282828;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+  }
+  
+  .outer-clock-face::after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg)
+  }
+  
+  .outer-clock-face::after,
+  .outer-clock-face::before,
+  .outer-clock-face .marking{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #5a52ce;
+    z-index: 0;
+    left: 49%;
+  }
+
+  
+  .outer-clock-face .marking-tierce {
+    background: #bdbdcb;
+    width: 4px;
+  }
+  .outer-clock-face .marking.marking-tierce {
+    background: rgb(27, 137, 80);
+  }
+  .outer-clock-face .marking.marking-tierce.one {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg)
+  }
+  .outer-clock-face .marking.marking-tierce.two {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    transform: rotate(135deg)
+  }
+
+  .outer-clock-face .marking-detail {
+    background: rgb(65, 65, 65);
+    width: 2px;
+  }
+    .outer-clock-face .marking.marking-detail.one {
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    transform: rotate(15deg)
+
+    }
+    .outer-clock-face .marking.marking-detail.two {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        transform: rotate(30deg)
+    }
+    .outer-clock-face .marking.marking-detail.three {
+        -webkit-transform: rotate(60deg);
+        -moz-transform: rotate(60deg);
+        transform: rotate(60deg)
+    }
+    .outer-clock-face .marking.marking-detail.four {
+        -webkit-transform: rotate(75deg);
+        -moz-transform: rotate(75deg);
+        transform: rotate(75deg)
+    }
+    .outer-clock-face .marking.marking-detail.five {
+        -webkit-transform: rotate(105deg);
+        -moz-transform: rotate(105deg);
+        transform: rotate(105deg)
+    }
+    .outer-clock-face .marking.marking-detail.six {
+        -webkit-transform: rotate(120deg);
+        -moz-transform: rotate(120deg);
+        transform: rotate(120deg)
+    }
+    .outer-clock-face .marking.marking-detail.seven {
+        -webkit-transform: rotate(150deg);
+        -moz-transform: rotate(150deg);
+        transform: rotate(150deg)
+    }
+    .outer-clock-face .marking.marking-detail.eight {
+        -webkit-transform: rotate(165deg);
+        -moz-transform: rotate(165deg);
+        transform: rotate(165deg)
+    }
+    
+
+
+  .inner-clock-face {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: #282828;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+  }
+  
+  .inner-clock-face::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 18px;
+    margin-left: -9px;
+    margin-top: -6px;
+    background: #4d4b63;
+    z-index: 11;
+  }
+  .hand {
+    width: 50%;
+    right: 50%;
+    height: 5px;
+    background: #e6e6e6;
+    position: absolute;
+    top: 50%;
+    border-radius: 2px;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  }
+  .hand.hour-hand {
+    width: 45%;
+    z-index: 3;
+  }
+  .time {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top:38%;
+    font-size: 17px;
+    z-index: 55;
+    transform: translateX(-50%);
+
+  }
+
+
+  /*  routine  */
+  
+  .routine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .routine-part {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 400px;
+    transform: rotate(calc(var(--rotation)*1deg));
+    transform-origin: left 0%;
+    position: absolute;
+    transition: .2s;
+    z-index: 5;
+}
+/*  routine creation  */
+.routine-creation {
+  display: none;
+  justify-content: center;
+}
+.routine-creation h2 {
+  margin: 5px;
+  font-size: 25px;
+}
+.routine-creation .input-sleep {
+  display: flex;
+  justify-content: center;
+}
+.routine-creation .input-sleep-start {
+  margin-right: 15px;
+}
