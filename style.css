@@ -13,15 +13,15 @@ body {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 35px;
   font-weight: normal;
   color: rgb(156, 156, 156);
   margin: 35px;
 }
 
 .routine {
-  width: 40rem;
-  height: 40rem;
+  width: 60rem;
+  height: 60rem;
   margin: auto;
   position: relative;
   padding: 15px;
@@ -40,14 +40,14 @@ h1 {
   height: 100%;
   background: white;
   z-index: 0;
-  left: 49%;
+  left: 50%;
   top: 0;
 }
 
 .routine__markings::after {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
-  transform: rotate(90deg) translateY(-3px);
+  transform: rotate(90deg) ;
 }
 .routine__markings .marking.marking-tierce,
 .routine__marking .marking.marking-detail {
@@ -57,38 +57,37 @@ h1 {
   width: 1px;
 }
 .routine__markings .marking.marking-tierce.one {
-  transform: rotate(45deg) translateY(-3px);
+  transform: rotate(45deg);
 }
 .routine__markings .marking.marking-tierce.two {
-  transform: rotate(135deg) translateY(-3px);
+  transform: rotate(135deg);
 }
-
 .routine__markings .marking.marking-detail.one {
-  transform: rotate(15deg) translateY(-1px);
+  transform: rotate(15deg);
 }
 .routine__markings .marking.marking-detail.two {
-  transform: rotate(30deg) translateY(-2px);
+  transform: rotate(30deg);
 }
 .routine__markings .marking.marking-detail.three {
-  transform: rotate(60deg) translateY(-3px);
+  transform: rotate(60deg);
 }
 .routine__markings .marking.marking-detail.four {
-  transform: rotate(75deg) translateY(-4px);
+  transform: rotate(75deg);
 }
 .routine__markings .marking.marking-detail.five {
-  transform: rotate(105deg) translateY(-4px);
+  transform: rotate(105deg);
 }
 .routine__markings .marking.marking-detail.six {
-  transform: rotate(120deg) translateY(-3px);
+  transform: rotate(120deg);
 }
 .routine__markings .marking.marking-detail.seven {
-  transform: rotate(150deg) translateY(-2px);
+  transform: rotate(150deg);
 }
 .routine__markings .marking.marking-detail.seven {
-  transform: rotate(165deg) translateY(-1px);
+  transform: rotate(165deg);
 }
 .routine__markings .marking.marking-detail.eight {
-  transform: rotate(150deg) translateY(-2px);
+  transform: rotate(150deg);
 }
 
 /* ROUTINE SCHEMA  */
@@ -105,8 +104,8 @@ h1 {
 .clock {
   position: relative;
   z-index: 10;
-  width: 30rem;
-  height: 30rem;
+  width: 50rem;
+  height: 50rem;
   padding: 2rem;
   border-radius: 50%;
 }
@@ -128,11 +127,11 @@ h1 {
   position: absolute;
   color: white;
   left: 50%;
-  top: 35%;
-  font-size: 17px;
+  top: 45%;
+  font-size: 25px;
   z-index: 55;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.454);
+  background: rgba(0, 0, 0);
   padding: 5px;
   border-radius: 4px;
 }
@@ -169,31 +168,30 @@ h1 {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   transform: rotate(calc(var(--rotation) * 1deg));
   transform-origin: left 0%;
   position: absolute;
   transition: 0.2s;
   z-index: 5;
-  text-align: center;
+  text-align: right;
 }
 
 .part__label {
   display: block;
-  font-size: 10px;
-  max-width: 45px;
+  font-size: 12px;
+  max-width: 60px;
   word-wrap: break-word;
   color: black;
   margin: auto;
-  transform: translateX(-23px);
+  transform: translate(124px,2px);
   text-align: left;
   line-height: 10px;
 }
 .part__label--rotate {
-  transform: translateX(-23px) rotate(180deg);
+  transform: translate(118px,2px) rotate(180deg);
 }
-
 
 /*  routine creation  */
 .routine-creation {
@@ -210,4 +208,31 @@ h1 {
 }
 .routine-creation .input-sleep-start {
   margin-right: 15px;
+}
+
+@media (max-width: 650px) {
+  .routine {
+    width: 30rem;
+    height: 30rem;
+  }
+  .clock {
+    width: 20rem;
+    height: 20rem;
+  }
+  .clock__face__time {
+    font-size: 12px;
+  }
+  .part{
+    width: 160px;
+    height: 160px;
+  }
+  .part__label {
+    font-size: 10px;
+
+    line-height: 6px;
+    transform: translate(58px,2px);
+  }
+  .part__label--rotate {
+    transform: translate(38px,2px) rotate(180deg);
+  }
 }

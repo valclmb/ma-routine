@@ -57,6 +57,7 @@ const displayStartDiv = (startTime, name, sleep, color, endTime) => {
     startTime < 12 ? "part__label--rotate" : undefined
   );
   span.innerText = name;
+  if (sleep) span.style.color = "white";
   startDiv.append(span);
 
   routineSchema.append(startDiv);
