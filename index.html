@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Roboto:wght@300;500;900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Roboto:wght@300;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ma routine</h1>
     <main>
-        <section class="routine-creation">
-            <form onsubmit="formSubmit()">
-                <h2>Quand voulez-vous dormir ? </h2>
-                <div class="input-sleep">
-                    <div class="input-sleep-start">
-                        <label for="input-sleep-start">De</label>
-                        <input type="time" id="input-sleep-start" name="sleepStart" >
-                    </div>
-                    <div>
-                        <div class="input-sleep-end">
-                            <label for="input-sleep-end">à</label>
-                            <input type="time" id="input-sleep-end" name="sleepEnd" >
-                        </div>
-                    </div>
-                </div>
-               <button>Valider</button>
-            </form>
-        </section>
-            <section class="routine">
-                <div class="routine__markings">
-                    <div class="marking marking-tierce one"></div>
-                    <div class="marking marking-tierce two"></div>
-                    <div class="marking marking-detail one"></div>
-                    <div class="marking marking-detail two"></div>
-                    <div class="marking marking-detail three"></div>
-                    <div class="marking marking-detail four"></div>
-                    <div class="marking marking-detail five"></div>
-                    <div class="marking marking-detail six"></div>
-                    <div class="marking marking-detail seven"></div>
-                    <div class="marking marking-detail eight"></div>
-                </div>
-                <div class="routine__schema">
-                    <div class="clock">
-                        <div class="clock__face">
-                            <div class="clock__face__time"></div>
-                            <div class="clock__face__hand"></div>
-                        </div>
-                   
-                    </div>
-                    <div class="routine__schema__parts"></div>
-                </div>
-        </section>
+      <section class="routine-creation">
+        <form onsubmit="formSubmit()">
+          <h2>Quand voulez-vous dormir ?</h2>
+          <div class="input-sleep">
+            <div class="input-sleep-start">
+              <label for="input-sleep-start">De</label>
+              <input type="time" id="input-sleep-start" name="sleepStart" />
+            </div>
+            <div>
+              <div class="input-sleep-end">
+                <label for="input-sleep-end">à</label>
+                <input type="time" id="input-sleep-end" name="sleepEnd" />
+              </div>
+            </div>
+          </div>
+          <button>Valider</button>
+        </form>
+      </section>
+      <section class="routine">
+        <div class="routine__markings">
+          <div class="marking marking-tierce one"></div>
+          <div class="marking marking-tierce two"></div>
+          <div class="marking marking-detail one"></div>
+          <div class="marking marking-detail two"></div>
+          <div class="marking marking-detail three"></div>
+          <div class="marking marking-detail four"></div>
+          <div class="marking marking-detail five"></div>
+          <div class="marking marking-detail six"></div>
+          <div class="marking marking-detail seven"></div>
+          <div class="marking marking-detail eight"></div>
+        </div>
+        <div class="routine__schema">
+          <div class="clock">
+            <div class="clock__face">
+              <div class="clock__face__time"></div>
+              <div class="clock__face__hand"></div>
+            </div>
+          </div>
+          <div class="routine__schema__parts"></div>
+        </div>
+      </section>
     </main>
-    
-    
 
-      <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
