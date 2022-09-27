@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>Ma routine</h1>
     <main>
         <section class="routine-creation">
             <form onsubmit="formSubmit()">
@@ -31,9 +31,9 @@
                <button>Valider</button>
             </form>
         </section>
-        <section class="routine-container">
-            <div class="routine-cc">
-                <div class="marking marking-tierce one"></div>
+            <section class="routine">
+                <div class="routine__markings">
+                    <div class="marking marking-tierce one"></div>
                     <div class="marking marking-tierce two"></div>
                     <div class="marking marking-detail one"></div>
                     <div class="marking marking-detail two"></div>
@@ -43,17 +43,17 @@
                     <div class="marking marking-detail six"></div>
                     <div class="marking marking-detail seven"></div>
                     <div class="marking marking-detail eight"></div>
-            <div class="routine">
-                <div class="clock">
-                    <div class="outer-clock-face">
-                    <div class="time"></div>
-                    <div class="inner-clock-face">
-                        <div class="hand hour-hand"></div>
-                    </div>
-                    </div>
                 </div>
-            </div>
-        </div>
+                <div class="routine__schema">
+                    <div class="clock">
+                        <div class="clock__face">
+                            <div class="clock__face__time"></div>
+                            <div class="clock__face__hand"></div>
+                        </div>
+                   
+                    </div>
+                    <div class="routine__schema__parts"></div>
+                </div>
         </section>
     </main>
     

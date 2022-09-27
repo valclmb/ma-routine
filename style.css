@@ -1,190 +1,200 @@
 html {
-    background: #282828;
-    text-align: center;
-    font-size: 10px;
-    font-family: 'Mono', monospace;
-    color: white;
-  }
-  body {
-    margin: 0;
-    font-size: 2rem;
-    min-height: 100vh;
-    align-items: center;
-  }
-  .routine-container {
-    display: none;
-    justify-content: space-around;
-    flex: 1;
-  }
-  h1 {
-    font-size: 20px;
-    font-weight: normal;
-    color: white;
-    margin: 35px;
-   
-  }
-  .clock {
-    position: relative;
-    z-index: 10;
-    width: 30rem;
-    height: 30rem;
-    padding: 2rem;
-    border-radius: 50%;
-  }
-
-
-  .routine-cc {
-    position: relative;
-    padding: 15px;
-    border-radius: 50%;
-    background-color: #282828;
-    border: 1px solid white;
-  }
-
-
-  .routine {
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-
-
-  .routine-cc .marking, .routine-cc::after, .routine-cc::before {
-    position: absolute;
-      content: '';
-      width: 3px;
-      height: 100%;
-      background: white;
-      z-index: 0;
-      left: 49%;
-      top: 0;
-  }
-
-  .routine-cc::after {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    transform: rotate(90deg) translateY(-3px);
-  }
-  h1{
-    color: rgb(156, 156, 156);
-  }
-  
-  .routine-cc .marking.marking-tierce, .routine-cc .marking.marking-detail{
-    width: 2px;
-  }
-   .routine-cc .marking.marking-detail{
-    width: 1px;
-  }
-  .routine-cc .marking.marking-tierce.one {
-    transform: rotate(45deg) translateY(-3px);
-  }
-  .routine-cc .marking.marking-tierce.two {
-    transform: rotate(135deg) translateY(-3px);
-  }
-
-  .routine-cc .marking.marking-detail.one {
-    transform: rotate(15deg) translateY(-1px);
-  }
-  .routine-cc .marking.marking-detail.two {
-    transform: rotate(30deg) translateY(-2px);
-  }
-  .routine-cc .marking.marking-detail.three {
-    transform: rotate(60deg) translateY(-3px);
-  }
-  .routine-cc .marking.marking-detail.four {
-    transform: rotate(75deg) translateY(-4px);
-  }
-  .routine-cc .marking.marking-detail.five {
-    transform: rotate(105deg) translateY(-4px);
-  }
-  .routine-cc .marking.marking-detail.six {
-    transform: rotate(120deg) translateY(-3px);
-  }
-  .routine-cc .marking.marking-detail.seven {
-    transform: rotate(150deg) translateY(-2px);
-  }
-  .routine-cc .marking.marking-detail.seven {
-    transform: rotate(165deg) translateY(-1px);
-  }
-  .routine-cc .marking.marking-detail.eight {
-    transform: rotate(150deg) translateY(-2px);
-  }
-  
-
-
-
-  .inner-clock-face {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 90%;
-    height: 90%;
-    background: #282828;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    z-index: 1;
-  }
-  
-  .inner-clock-face::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 16px;
-    height: 16px;
-    border-radius: 18px;
-    margin-left: -9px;
-    margin-top: -6px;
-    background: #4d4b63;
-    z-index: 11;
-  }
-  .hand {
-    width: 50%;
-    right: 50%;
-    height: 5px;
-    background: #e6e6e6;
-    position: absolute;
-    top: 50%;
-    border-radius: 2px;
-    transform-origin: 100%;
-    transform: rotate(90deg);
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
-  }
-  .hand.hour-hand {
-    width: 45%;
-    z-index: 3;
-  }
-  .time {
-    position: absolute;
-    color: white;
-    left: 50%;
-    top:35%;
-    font-size: 17px;
-    z-index: 55;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.454);
-    padding: 5px;
-    border-radius: 4px;
-  }
-
-
-  /*  routine  */
- 
-  .routine-part {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 400px;
-    height: 400px;
-    transform: rotate(calc(var(--rotation)*1deg));
-    transform-origin: left 0%;
-    position: absolute;
-    transition: .2s;
-    z-index: 5;
+  background: #282828;
+  text-align: center;
+  font-size: 10px;
+  font-family: "Mono", monospace;
+  color: white;
 }
+body {
+  margin: 0;
+  font-size: 2rem;
+  min-height: 100vh;
+  align-items: center;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: normal;
+  color: rgb(156, 156, 156);
+  margin: 35px;
+}
+
+.routine {
+  width: 40rem;
+  height: 40rem;
+  margin: auto;
+  position: relative;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #282828;
+  border: 1px solid white;
+}
+
+/* ROUTINE MARKINGS  */
+.routine__markings .marking,
+.routine__markings::after,
+.routine__markings::before {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 0;
+  left: 49%;
+  top: 0;
+}
+
+.routine__markings::after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg) translateY(-3px);
+}
+.routine__markings .marking.marking-tierce,
+.routine__marking .marking.marking-detail {
+  width: 2px;
+}
+.routine__markings .marking.marking-detail {
+  width: 1px;
+}
+.routine__markings .marking.marking-tierce.one {
+  transform: rotate(45deg) translateY(-3px);
+}
+.routine__markings .marking.marking-tierce.two {
+  transform: rotate(135deg) translateY(-3px);
+}
+
+.routine__markings .marking.marking-detail.one {
+  transform: rotate(15deg) translateY(-1px);
+}
+.routine__markings .marking.marking-detail.two {
+  transform: rotate(30deg) translateY(-2px);
+}
+.routine__markings .marking.marking-detail.three {
+  transform: rotate(60deg) translateY(-3px);
+}
+.routine__markings .marking.marking-detail.four {
+  transform: rotate(75deg) translateY(-4px);
+}
+.routine__markings .marking.marking-detail.five {
+  transform: rotate(105deg) translateY(-4px);
+}
+.routine__markings .marking.marking-detail.six {
+  transform: rotate(120deg) translateY(-3px);
+}
+.routine__markings .marking.marking-detail.seven {
+  transform: rotate(150deg) translateY(-2px);
+}
+.routine__markings .marking.marking-detail.seven {
+  transform: rotate(165deg) translateY(-1px);
+}
+.routine__markings .marking.marking-detail.eight {
+  transform: rotate(150deg) translateY(-2px);
+}
+
+/* ROUTINE SCHEMA  */
+
+.routine__schema {
+  position: relative;
+  margin: auto;
+  padding: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* clock  */
+.clock {
+  position: relative;
+  z-index: 10;
+  width: 30rem;
+  height: 30rem;
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.clock__face {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: #282828;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.clock__face__time {
+  position: absolute;
+  color: white;
+  left: 50%;
+  top: 35%;
+  font-size: 17px;
+  z-index: 55;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.454);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+/* clock middle point  */
+.clock__face::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: #4d4b63;
+  z-index: 11;
+}
+
+.clock__face__hand {
+  width: 45%;
+  right: 50%;
+  height: 5px;
+  background: #e6e6e6;
+  position: absolute;
+  top: 50%;
+  border-radius: 2px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+/* big squares for routine parts*/
+.part {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 400px;
+  height: 400px;
+  transform: rotate(calc(var(--rotation) * 1deg));
+  transform-origin: left 0%;
+  position: absolute;
+  transition: 0.2s;
+  z-index: 5;
+  text-align: center;
+}
+
+.part__label {
+  display: block;
+  font-size: 10px;
+  max-width: 45px;
+  word-wrap: break-word;
+  color: black;
+  margin: auto;
+  transform: translateX(-23px);
+  text-align: left;
+  line-height: 10px;
+}
+.part__label--rotate {
+  transform: translateX(-23px) rotate(180deg);
+}
+
+
 /*  routine creation  */
 .routine-creation {
   display: none;
